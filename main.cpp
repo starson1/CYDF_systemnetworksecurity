@@ -20,18 +20,19 @@ struct ip_hdr{
     struct ip_addr dst;
 };
 struct tcp_hdr{
-    char src_port[2];
-    char dst_port[2];
-    u_char no_need[20];
-    u_char data[16];
+    unsigned short src_port;
+    unsigned short dst_port;
+    u_char no_need[16];
+    char data[16];
 };
+
 void print_tcp(const u_char *packet){
     struct tcp_hdr *tcp;
     tcp = (struct tcp_hdr *)packet;
 
     printf("src packet : %d\n",tcp->src_port);
     printf("dst packet : %d\n",tcp->dst_port);
-    printf("data : %s\n",tcp->data);
+    printf("data : %s\n",tcp->data); // data longer than 16byte.... fix needed
 }
 void print_ip(const u_char *packet){
     struct ip_hdr *ip;
@@ -97,12 +98,12 @@ int main(int argc, char* argv[]){
         }
         if(packet[23] == 6){
             printf("----------------------------\n");
-        print_eth(packet);
-        packet+=14;
-        print_ip(packet);
-        packet +=20;
-        print_tcp(packet);
-        printf("----------------------------\n\n");
+            print_eth(packet);
+            packet+=14;
+            print_ip(packet);
+            packet +=20;
+            print_tcp(packet);
+            printf("----------------------------\n\n");
         }
     }
     pcap_close(handle);
