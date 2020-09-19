@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include <arpa/inet.h>
 #include<libnet.h>
+#include <netinet/in.h>
 #include<stdint.h>
 
 struct eth_addr{
@@ -30,8 +31,8 @@ void print_tcp(const u_char *packet){
     struct tcp_hdr *tcp;
     tcp = (struct tcp_hdr *)packet;
 
-    printf("src packet : %d\n",tcp->src_port);
-    printf("dst packet : %d\n",tcp->dst_port);
+    printf("src port : %d\n",ntohs(tcp->src_port));
+    printf("dst port : %d\n",ntohs(tcp->dst_port));
     printf("data : %s\n",tcp->data); // data longer than 16byte.... fix needed
 }
 void print_ip(const u_char *packet){
