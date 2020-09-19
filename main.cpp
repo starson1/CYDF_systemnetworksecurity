@@ -33,7 +33,7 @@ void print_tcp(const u_char *packet){
 
     printf("src port : %d\n",ntohs(tcp->src_port));
     printf("dst port : %d\n",ntohs(tcp->dst_port));
-    printf("data : %s\n",tcp->data); // data longer than 16byte.... fix needed
+    printf("data : %.16s\n",tcp->data);
 }
 void print_ip(const u_char *packet){
     struct ip_hdr *ip;
