@@ -1,0 +1,24 @@
+1.arp 테이블 변조.
+
+2.target이 sender에게 request를 보내면, 원래 보내져야하는 애(main)한테 전송
+
+3.main 의 reply를  target에게 전송.
+
+
+
+simulation :
+
+<desktop> -> victim
+ip :192.168.200.156
+mac :  00-26-66-40-0B-A4
+gate : 192.168.200.254
+<laptop>
+ip : 192.168.200.109
+mac : 50-76-AF-9B-2E-54
+gate : 192.168.200.254
+<laptop_vm> -> attacker
+ip : 192.168.200.157
+mac : 00-0C-29-6F-78-3E
+gate : 192.168.200.254
+
+
