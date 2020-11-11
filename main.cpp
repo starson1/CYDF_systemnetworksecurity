@@ -170,11 +170,8 @@ int main(int argc, char **argv)
 	while(pFile.peek()!= EOF){
 		pFile.getline(tmp,sizeof(tmp));
 		tok = strtok(tmp,",");
-		while(tok !=NULL){
-			printf("%s\n",tok);
-			tok = strtok(NULL,",");
-			url_list[cnt] = tok;
-		}		
+		tok = strtok(NULL,",");
+		url_list[cnt] = tok;		
 		cnt +=1;
 		
 	}
