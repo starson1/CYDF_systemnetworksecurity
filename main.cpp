@@ -7,10 +7,10 @@ pcap_t* handle;
 int print_frame(pcap_t* handle,uint8_t* packet){
     struct Radiotap_hdr* radio_hdr = (struct Radiotap_hdr*)packet;
     struct Beacon_Frame* beacon = (struct Beacon_Frame*)(packet+radio_hdr->hdr_len);
-    struct Wireless_mgmt* w_mgmt = (struct Wireless_mgmt*)(packet+sizeof(struct Beacon_Frame));
-
+    struct Wireless_mgmt* w_mgmt = (struct Wireless_mgmt*)(packet+radio_hdr->hdr_len+sizeof(struct Beacon_Frame));
+    
     if(beacon->FCF[0] != 0x80){
-        printf("Not A Beacon Frame!\n");
+        printf("Not A Beacon Frame!\n\n");
         return 0;
     }
     //BSSID
@@ -21,29 +21,35 @@ int print_frame(pcap_t* handle,uint8_t* packet){
     printf("%02x\n",beacon->BSSID[5]);
 
     //ESSID
-    
-    printf("SSID : %s\n",w_mgmt->tagged->SSID);
-
+    printf("SSID :");
+    for(int i=0;i<w_mgmt->tag1_len;i++){
+        printf("%c",w_mgmt->SSID[i]);
+    }
+    printf("\n");
+    char* ssid = w_mgmt->SSID;
     //BEACON
     //calc Beacon_list
+    
     int flag =1;
     for(int i=0;i<beacon_list.size();i++){
-        if(!strncmp(w_mgmt->tagged->SSID,beacon_list[i].first.c_str(),sizeof(beacon_list[i].first.c_str()))){
+        
+        if(!strncmp((char*)w_mgmt->SSID,beacon_list[i].first.c_str(),sizeof(beacon_list[i].first.c_str()))){
             beacon_list[i].second +=1;
             printf("BEACON : %d\n",beacon_list[i].second);
             flag =0;
             break;
         }
     }
+    
     if(flag){
-        pair<string,int> p = make_pair(w_mgmt->tagged->SSID,0);
+        pair<string,int> p = make_pair(ssid,0);
         beacon_list.push_back(p);
         printf("BEACON : 0\n");
     }
     
     //PWR
     printf("PWR : %d dBm\n",radio_hdr->ant_sig1);
-    
+    printf("\n");
     
     return 1;
 }
