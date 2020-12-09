@@ -17,7 +17,7 @@
 struct Radiotap_hdr{
     uint8_t hdr_rev;
     uint8_t hdr_pad;
-    uint8_t hdr_len;
+    uint16_t hdr_len;
     uint64_t present_flag;
     uint64_t MAC_timestamp;
     uint8_t flag;
@@ -33,24 +33,17 @@ struct Radiotap_hdr{
 struct Beacon_Frame{
     uint8_t FCF[2];         //Frame Control Field : 2byte
     uint16_t Dur;         //Duration : 2byte
-    uint8_t Rec_MAC[6];   // Receiver Mac Address : 6byte
-    uint8_t Dst_MAC[6];   // Destination Mac Address : 6byte
-    uint8_t Trans_MAC[6]; // Transmitter Mac Address : 6byte
-    uint8_t Src_MAC[6];   //Source Mac Address : 6byte
+    uint8_t Brdcast[6];   // Destination Mac Address : 6byte
+    uint8_t MAC[6];   //Source Mac Address : 6byte
     uint8_t BSSID[6];     // BSSID : 6byte
     uint16_t frag_num;    //fragment number
-    uint16_t seq_num;     //sequence number
 };
 
-
-struct Tagged_params{
+struct Wireless_mgmt{
+    uint16_t fixed[6];
     uint8_t tag1_num;
     uint8_t tag1_len;
-    char* SSID;
+    char SSID[20];
 
-};
-struct Wireless_mgmt{
-    uint16_t fixed;
-    struct Tagged_params* tagged;    
 };
 
