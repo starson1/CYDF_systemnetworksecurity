@@ -1,0 +1,19 @@
+11/19/2020-17:13:53.151028  [**] [1:10001:1] gilgil.net access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.11:59222 -> 175.213.35.39:80
+11/19/2020-17:13:53.417742  [**] [1:10001:1] gilgil.net access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.11:59222 -> 175.213.35.39:80
+11/19/2020-17:13:53.701263  [**] [1:10001:1] gilgil.net access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.11:59222 -> 175.213.35.39:80
+11/19/2020-17:13:55.980673  [**] [1:10001:1] gilgil.net access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.11:59222 -> 175.213.35.39:80
+11/19/2020-17:14:29.691097  [**] [1:10002:1] netflix.com access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.11:45870 -> 54.187.176.196:80
+11/23/2020-12:43:14.262795  [**] [1:10001:1] facebook Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:52008 -> 31.13.82.36:443
+11/23/2020-12:48:30.234219  [**] [1:10000:1] qt.io access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:58498 -> 52.18.144.254:80
+11/23/2020-12:52:59.056129  [**] [1:10000:1] qt.io access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:58504 -> 52.18.144.254:80
+11/23/2020-12:53:07.684992  [**] [1:10001:1] pornhub.com access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:42536 -> 66.254.114.41:80
+11/23/2020-12:53:41.008391  [**] [1:10003:1] korea.go.kr access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:58022 -> 125.60.35.219:80
+11/23/2020-12:53:41.072517  [**] [1:10003:1] korea.go.kr access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:58022 -> 125.60.35.219:80
+11/23/2020-12:53:44.595422  [**] [1:10004:1] vared.kr access [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:36370 -> 203.245.44.111:80
+11/23/2020-12:53:49.001298  [**] [1:10005:1] facebook Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:52052 -> 31.13.82.36:443
+11/23/2020-12:53:49.289963  [**] [1:10005:1] facebook Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:52054 -> 31.13.82.36:443
+11/23/2020-12:53:54.347467  [**] [1:10006:1] naver Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:44144 -> 223.130.195.200:443
+11/23/2020-12:53:58.322390  [**] [1:10007:1] youtube Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:54710 -> 216.58.220.142:443
+11/23/2020-12:53:58.577764  [**] [1:10007:1] youtube Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:52814 -> 172.217.175.14:443
+11/23/2020-12:54:07.266858  [**] [1:10007:1] youtube Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:54714 -> 216.58.220.142:443
+11/23/2020-12:54:07.493122  [**] [1:10007:1] youtube Client Hello [**] [Classification: (null)] [Priority: 3] {TCP} 172.18.106.10:52818 -> 172.217.175.14:443
